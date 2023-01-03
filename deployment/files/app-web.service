@@ -1,0 +1,14 @@
+[Unit]
+Description=app service description
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/app
+ExecStart=/path/to/dotnet Portable.Dotnet.dll
+Restart=always
+Type=notify
+
+
+[Install]
+WantedBy=default.target
+RequiredBy=network.target
