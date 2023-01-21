@@ -5,10 +5,11 @@
 
 body {
     font-family: "JetBrains Mono";
-    background-color: antiquewhite;
+    background-color: #333;
+    color: #FFEFC1;
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 body::-webkit-scrollbar { /* WebKit */
@@ -29,8 +30,42 @@ body::-webkit-scrollbar { /* WebKit */
 }
 
 .fire-black {
-    color: #010100;
+    color: #333;
 }
+
+.top-button {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Position 20px from the bottom of the page */
+    right: 30px; /* Position 30px from the right of the page */
+    z-index: 99; /* Ensure the button appears on top of other elements */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    background-color: #FD7F20; /* Blue background color */
+    color: #333; /* White text color */
+    cursor: pointer; /* Change cursor to a hand when hovering */
+    padding: 15px; /* Add some padding */
+    border-radius: 10px; /* Add rounded corners */
+    font-size: 18px; /* Increase font size */
+    font-family: "JetBrains Mono";
+}
+
+.top-button:hover {
+    animation-name: pop-button;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop-button {
+     to {
+         box-shadow:
+                 1px 1px 0 yellow,
+                 2px 2px 0 orange,
+                 3px 3px 0 red,
+                 4px 4px 0 brown
+     }
+ }
+
+
 
 #blazor-error-ui {
     background: lightyellow;

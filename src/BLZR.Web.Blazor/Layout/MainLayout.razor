@@ -1,90 +1,142 @@
 ﻿@inherits LayoutComponentBase
 
+@inject NavigationManager NavigationManager
+
 <style>
-  /* The app bar container */
-  .app-bar {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    background-color: #FD7F20;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding-right: 10px;
-    position: sticky;
-    top: 0;
-  }
+    .app-bar {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        background-color: #FD7F20;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding-right: 10px;
+        position: sticky;
+        top: 0;
+    }
   
-  .app-bar-logo {
+    .app-bar-logo {
     font-size: 20px;
     font-weight: bold;
     margin-left: 20px;
-  }
+    }
   
-  .app-bar-logo a {
-    color: #010100;
+    .app-bar-logo a {
+    color: #333;
     text-decoration: none;
-  }
-  
-  .app-bar-menu {
+    }
+    
+    .app-bar-logo-text:hover {
+      animation-name: pop-word;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    
+    @@keyframes pop-word {
+      to {
+        text-shadow:
+          1px 1px 0 yellow,
+          2px 2px 0 orange,
+          3px 3px 0 red,
+          4px 4px 0 brown
+      }
+    }
+      
+    .app-bar-menu {
     display: flex;
     margin-left: auto;
     margin-right: 20px;
-  }
+    }
   
-  .app-bar-menu a {
-    margin-left: 20px;
-    font-size: 16px;
-    color: #010100;
-    text-decoration: none;
-  }
+    .app-bar-menu a {
+        margin-left: 20px;
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+    }
   
-  .app-bar-menu a:hover {
+    .app-bar-menu a:hover {
     color: #FDB750;
-  }
+    }
   
-  .app-bar-search {
+    .app-bar-search {
     display: flex;
     margin-left: 20px;
-  }
+    }
   
-  .app-bar-search input {
-    width: 300px;
-    height: 32px;
-    border: 2px solid #010100;
-    background-color: antiquewhite;
-    border-radius: 4px;
-    padding: 0 16px;
-    font-size: 14px;
-    font-family: "JetBrains Mono";
-  }
+    .app-bar-search input {
+        width: 300px;
+        height: 32px;
+        border: 2px solid #333;
+        background-color: #ffefc1;
+        border-radius: 4px;
+        padding: 0 16px;
+        font-size: 14px;
+        font-family: "JetBrains Mono";
+    }
   
-  .app-bar-search button {
-    width: 50px;
-    height: 32px;
-    background-color: #FC2E20;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+    .app-bar-search button {
+        width: 50px;
+        height: 32px;
+        background-color: #FDB750;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
   
-  .app-bar-search button:hover {
-    background-color: #FDB750;
-  }
+    .app-bar-search button:hover {
+        animation-name: pop-button;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @@keyframes pop-button {
+        to {
+            box-shadow:
+              1px 1px 0 yellow,
+              2px 2px 0 orange,
+              3px 3px 0 red,
+              4px 4px 0 brown
+        }
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .copyright {
+        padding: 20px 0;
+    }
+
+    .copyright p {
+        margin: 0;
+        text-align: center;
+    }
+
+    .social-icons li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .social-icons li a {
+        color: #fff;
+    }
+
+    .social-icons li a:hover {
+        color: #ccc;
+    }
 
 </style>
 
 <div class="app-bar">
   <div class="app-bar-logo">
-    <a href="/">&lt;BLZR&gt;</a>
+    <a class="app-bar-logo-text" href="/">&lt;BLZR&gt;</a>
   </div>
 
   <div class="app-bar-menu">
-    <a href="/">Home</a>
-    <a href="/examples">Examples</a>
-    <a href="/trending">Trending</a>
     <a href="/about">About</a>
   </div>
 
@@ -97,3 +149,28 @@
 </div>
 
 <main> @Body </main>
+
+@if (showFooter)
+{
+    <footer>
+        <div class="copyright">
+            <p>&copy; @DateTimeOffset.Now.Year BLZR.DEV</p>
+        </div>
+    </footer>
+}
+
+@code
+{
+    bool showFooter = false;
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += HandleLocationChanged;
+    }
+
+    private void HandleLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        var uri = new Uri(e.Location);
+        showFooter = !uri.AbsolutePath.Equals("/");
+    }
+}
