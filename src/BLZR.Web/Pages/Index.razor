@@ -27,6 +27,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -43,11 +44,12 @@
     <h1 class="content-row" style="padding-bottom: 10px;">The unofficial site for all things Blazor</h1>
     <p class="content-row">@flavorText</p>
     <div class="content-container">
-        @for(int i = 0; i < contentCount; i++)
+        @foreach(var post in postItems)
         {
             <div class="content-item">
-                <h2>Content Item @i</h2>
-                <p>Some content</p>
+                <h2>@post.Title</h2>
+                <p>@post.Description</p>
+                <p>@post.Likes</p>
             </div>
         }
     </div>
@@ -55,6 +57,20 @@
 
 @code
 {
-    int contentCount = 500;
-    string flavorText = "Blazor is a web framework for building client-side web apps with .NET and C#";
+    string flavorText = "Blazor is a web framework for building web apps with .NET and C# and a variety hosting flavors!";
+
+    PostItem[]? postItems;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // generate 50 fake post items and toarray to postItems
+        postItems = Enumerable.Range(1, 50).Select(index => new PostItem
+        {
+            Description = "Nothing",
+            Title = $"Post Item {index}",
+            ImageUrl = $"Some content for post item {index}",
+            LinkUrl = $"Some content for post item {index}",
+            Likes = index * 2,
+        }).ToArray();
+    }
 }

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLZR.Web.Blazor", "src\BLZR.Web.Blazor\BLZR.Web.Blazor.csproj", "{D047DADF-41D0-4141-B84B-F8103564C667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLZR.Web", "src\BLZR.Web\BLZR.Web.csproj", "{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D047DADF-41D0-4141-B84B-F8103564C667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D047DADF-41D0-4141-B84B-F8103564C667}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D047DADF-41D0-4141-B84B-F8103564C667}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D047DADF-41D0-4141-B84B-F8103564C667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
