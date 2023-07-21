@@ -23,8 +23,8 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://blzrdev.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_a90536b74d87427e99180141bef269f5 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_ed9156292e4a4cbda8045fb10451cefe }}
+        username: ${{ secrets.IMAGE_REPO_USER }}
+        password: ${{ secrets.IMAGE_REPO_KEY }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
