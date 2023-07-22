@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: blzrdev.azurecr.io/blzr-dev:${{ github.sha }}
+        tags: blzrdev.azurecr.io/blzr-web:latest
         file: ./src/BLZR.Web/Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'blzr'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_dfcd7d060db7403f8c7775662a3d7310 }}
-        images: 'blzrdev.azurecr.io/blzr-dev:${{ github.sha }}'
+        images: 'blzrdev.azurecr.io/blzr-web:latest'
