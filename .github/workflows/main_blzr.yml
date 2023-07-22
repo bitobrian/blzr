@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: blzrdev.azurecr.io/blzr-dev:${{ github.sha }}
-        file: {{ GITHUB_WORKSPACE }}/Dockerfile
+        file: ./${{ github.workspace }}/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,4 +48,4 @@ jobs:
         app-name: 'blzr'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_dfcd7d060db7403f8c7775662a3d7310 }}
-        images: 'blzrdev.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_a90536b74d87427e99180141bef269f5 }}/blzr-dev:${{ github.sha }}'
+        images: 'blzrdev.azurecr.io/blzr-dev:${{ github.sha }}'
