@@ -1,45 +1,5 @@
 ﻿@page "/"
 
-<style>
-    .content-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
-    
-    .content-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    
-    .content-item {
-        width: 250px;
-        height: 300px;
-        border-bottom: 4px solid #FD7F20;
-        border-top: 8px solid #FD7F20;
-        background-color: #FDB750;
-        color: #333;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 5px;
-        transition:  0.3s;
-    }
-    
-    .content-item:hover {
-        transform: scale(1.25);
-    }
-</style>
-
 <div class="index-page">
     <h1 class="content-row" style="padding-bottom: 10px;">The unofficial site for all things Blazor</h1>
     <p class="content-row">@flavorText</p>

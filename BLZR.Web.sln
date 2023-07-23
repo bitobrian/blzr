@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLZR.Web", "src\BLZR.Web\BLZR.Web.csproj", "{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33906.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLZR.Web", "src\BLZR.Web\BLZR.Web.csproj", "{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +15,11 @@ Global
 		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D60A78D7-AEE1-4E17-9D8C-A913EB581DDA}
 	EndGlobalSection
 EndGlobal

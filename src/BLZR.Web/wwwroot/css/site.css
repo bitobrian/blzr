@@ -5,7 +5,7 @@
 
 body {
     font-family: "JetBrains Mono";
-    background-color: #333;
+    background-color: #111213;
     color: #FFEFC1;
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
@@ -17,20 +17,38 @@ body::-webkit-scrollbar { /* WebKit */
     height: 0;
 }
 
-.fire-red {
-    color: #FC2E20;
+.content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
-.fire-orange {
-    color: #FD7F20;
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.fire-yellow {
-    color: #FDB750;
-}
-
-.fire-black {
-    color: #333;
+.content-item {
+    width: 250px;
+    height: 300px;
+    border-bottom: 4px solid #FD7F20;
+    border-top: 8px solid #FD7F20;
+    color: #f0f3f5;
+    background-color: #232324;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    transition: 0.3s;
 }
 
 .top-button {
