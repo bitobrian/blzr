@@ -1,17 +1,16 @@
 ﻿@page "/"
 
 <div class="index-page">
-    <h1 class="content-row" style="padding-bottom: 10px;">The unofficial site for all things Blazor</h1>
-    <p class="content-row">@flavorText</p>
-    <div class="content-container">
-        @foreach(var post in postItems)
-        {
-            <div class="content-item">
-                <h2>@post.Title</h2>
-                <p>@post.Description</p>
-                <p>@post.Likes</p>
-            </div>
-        }
+    <div class="content-row">
+        <div class="stuff">
+            <BLZR.Web.Components.Featured.FeaturedItemSection />
+            @*Latest posts list*@
+        </div>
+        <div class="content-col">
+            <MainInfoPanel/>
+            <TopForumItemsPanel/>
+            <TopContributionsPanel/>
+        </div>
     </div>
 </div>
 
