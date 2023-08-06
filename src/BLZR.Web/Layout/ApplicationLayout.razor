@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<main class="container" style="padding-top: 0;">
+  <nav style="padding-top: 0;">
+    <ul>
+      <li>
+        <strong>
+          <a href="/">&lt;BLZR&gt;</a>
+        </strong>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="https://www.github.com/bitobrian/blzr"><i class="bi bi-github"></i></a></li>
+      <li>
+        <details role="list" dir="rtl">
+          <summary aria-haspopup="listbox" role="link"><i class="bi bi-person-circle"></i></summary>
+          <ul role="listbox">
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+  <input type="search" id="search" name="search" placeholder="Search">
+  <div style="padding-top: 0;">
+    @Body
+  </div>
+</main>
+
+@code {
+
+}
