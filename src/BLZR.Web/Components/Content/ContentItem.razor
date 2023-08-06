@@ -1,7 +1,16 @@
 ﻿@namespace BLZR.Web.Components
 
-<h3>ContentItem</h3>
+<article style="margin-top: 0; padding: 20px; @CssStyle">
+    <div>
+        <h3>@Item.Title</h3>
+        <p>@Item.Description</p>
+    </div>
+</article>
 
 @code {
-
+    [Parameter]
+    public PostItem Item { get; set; }
+    
+    [Parameter]
+    public string CssStyle { get; set; }
 }

@@ -1,16 +1,14 @@
 ﻿@page "/"
 
-<div class="index-page">
-    <div class="content-row">
-        <div class="stuff">
-            <BLZR.Web.Components.Featured.FeaturedItemSection />
-            @*Latest posts list*@
-        </div>
-        <div class="content-col">
-            <MainInfoPanel/>
-            <TopForumItemsPanel/>
-            <TopContributionsPanel/>
-        </div>
+<div style="display: flex; flex-direction: row; gap: 15px;">
+    <div style="flex-direction: column; width: 25%;">
+        <MainInfoPanel />
+        <TopForumItemsPanel />
+        <TopContributionsPanel />
+    </div>
+    <div style="flex-direction: column; width: 75%;">
+        <FeaturedBar />
+        <ContentList CssStyle="margin: 0;" PostItems="postItems" />
     </div>
 </div>
 
@@ -23,7 +21,7 @@
     protected override async Task OnInitializedAsync()
     {
         // generate 50 fake post items and toarray to postItems
-        postItems = Enumerable.Range(1, 50).Select(index => new PostItem
+        postItems = Enumerable.Range(1, 12).Select(index => new PostItem
         {
             Description = "Nothing",
             Title = $"Post Item {index}",

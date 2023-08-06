@@ -1,0 +1,16 @@
+﻿@namespace BLZR.Web.Components
+
+<div style="display: flex; flex-direction: column; gap: 15px;">
+    @foreach (var post in PostItems)
+    {
+        <ContentItem Item="@post" CssStyle="@CssStyle" />
+    }
+</div>
+
+@code {
+    [Parameter]
+    public PostItem[] PostItems { get; set; }
+    
+    [Parameter]
+    public string CssStyle { get; set; }
+}
