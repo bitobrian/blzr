@@ -1,16 +1,16 @@
 ﻿@inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
+@inject IJSRuntime js
 
 <main class="container" style="padding-top: 0;">
   <nav style="padding-top: 0;">
     <ul>
       <li>
-        <strong>
-          <a href="/">&lt;BLZR&gt;</a>
-        </strong>
+          <img class="logo-img" src="blzr200.png"/>
       </li>
     </ul>
     <ul>
+      <li><a href="/"><i class="bi bi-house-fill"></i></a></li>
       <li><a href="https://www.github.com/bitobrian/blzr"><i class="bi bi-github"></i></a></li>
       <li>
         <details role="list" dir="rtl">
@@ -22,6 +22,18 @@
           </ul>
         </details>
       </li>
+      <li>
+            <button @onclick="@(()=> ToggleDarkMode())">
+                    @if (!darkMode)
+                    {
+                        <div>Light <i class="bi bi-sun"></i></div>
+                    }
+                    else
+                    {
+                        <div>Dark <i class="bi bi-moon"></i> </div>
+                    }
+                </button>
+      </li>
     </ul>
   </nav>
   <input type="search" id="search" name="search" placeholder="Search">
@@ -31,5 +43,13 @@
 </main>
 
 @code {
+    bool darkMode = false;
 
+    async Task ToggleDarkMode()
+    {
+        Console.WriteLine("Toggling dark mode");
+        // log to browser console
+        await js.InvokeVoidAsync("console.log", "Toggling dark mode");
+        darkMode = !darkMode;
+    }
 }

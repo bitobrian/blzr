@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.33906.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLZR.Web", "src\BLZR.Web\BLZR.Web.csproj", "{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLZR.Web.Wasm", "src\BLZR.Web.Wasm\BLZR.Web.Wasm.csproj", "{6DC025E9-AE5D-49F4-9C8A-06EB3AB6E86F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D45FA2B-B34C-43D3-906A-43E5FA5761AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DC025E9-AE5D-49F4-9C8A-06EB3AB6E86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DC025E9-AE5D-49F4-9C8A-06EB3AB6E86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DC025E9-AE5D-49F4-9C8A-06EB3AB6E86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DC025E9-AE5D-49F4-9C8A-06EB3AB6E86F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

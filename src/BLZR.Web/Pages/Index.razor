@@ -1,10 +1,13 @@
 ﻿@page "/"
+@inject IJSRuntime js
+
+<button @onclick="WriteToBrowserConsole">Write to browser console</button>
 
 <div style="display: flex; flex-direction: row; gap: 15px;">
     <div style="flex-direction: column; width: 25%;">
         <MainInfoPanel />
-        <TopForumItemsPanel />
-        <TopContributionsPanel />
+@*         <TopForumItemsPanel />
+        <TopContributionsPanel /> *@
     </div>
     <div style="flex-direction: column; width: 75%;">
         <FeaturedBar />
@@ -29,5 +32,11 @@
             LinkUrl = $"Some content for post item {index}",
             Likes = index * 2,
         }).ToArray();
+    }
+
+    async Task WriteToBrowserConsole()
+    {
+        Console.WriteLine("Hello from C#");
+        await js.InvokeVoidAsync("console.log", "EAIT SHIT");
     }
 }

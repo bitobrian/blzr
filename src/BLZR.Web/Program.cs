@@ -3,7 +3,8 @@ using BLZR.Web;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents();
+builder.Services.AddRazorComponents()
+    .AddWebAssemblyComponents();
 
 var app = builder.Build();
 
@@ -19,6 +20,7 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-app.MapRazorComponents<App>();
+app.MapRazorComponents<App>()
+    .AddWebAssemblyRenderMode();
 
 app.Run();
